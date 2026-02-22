@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Smita 🌸</title>
+<title>For Debosmita 🌸</title>
 
 <style>
 body {
@@ -27,27 +27,28 @@ body {
     color: white;
     box-shadow: 0 0 30px rgba(0,0,0,0.2);
     width: 90%;
-    max-width: 500px;
+    max-width: 550px;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.3em;
     animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
     from { text-shadow: 0 0 10px white; }
-    to { text-shadow: 0 0 25px red; }
+    to { text-shadow: 0 0 25px #ff004c; }
 }
 
 #message {
     margin-top: 20px;
-    font-size: 1.3em;
-    min-height: 60px;
+    font-size: 1.2em;
+    min-height: 120px;
+    line-height: 1.6;
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 25px;
     padding: 10px 25px;
     border-radius: 25px;
     border: none;
@@ -64,7 +65,6 @@ button:hover {
     color: white;
 }
 
-/* Floating hearts */
 .heart {
     position: absolute;
     animation: float 6s linear infinite;
@@ -79,32 +79,54 @@ button:hover {
 
 <body>
 
-<audio autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+<audio id="bgMusic" loop>
+  <source src="romantic.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card">
-    <h1>Debosmita ❤️</h1>
+    <h1>Debosmita 🌸</h1>
     <div id="message"></div>
-    <button onclick="unlock()">Unlock Secret 💌</button>
+    <button onclick="unlock()">Click Here 💌</button>
 </div>
 
 <script>
-const text = "Smita... You are not just special, you are the reason behind my random smiles every day. 💕 – Simone";
+
+const text = `There was once a boy who never really believed in "favourite person" concept.
+Until one day, a girl named Debosmita slowly became part of his everyday routine.
+
+Her random talks, her little complaints about gorom cha ☕,
+her simple "ki korchis?" messages —
+somehow started becoming the best part of his day.
+
+He never says big dramatic words.
+But if someone ever asked him,
+"Who is your favourite girl?"
+
+He would smile quietly and think of her.
+
+And maybe... just maybe,
+she already knows. 🌸
+
+– Simone`;
+
 let i = 0;
 
 function typeWriter() {
     if (i < text.length) {
         document.getElementById("message").innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeWriter, 50);
+        setTimeout(typeWriter, 35);
     }
 }
 typeWriter();
 
 function unlock() {
-    alert("If someday you feel low, remember — someone secretly cares about you more than you think ❤️");
+    alert("Just wanted you to know... you are really special to me. Always have been. 🌷");
 }
+
+window.addEventListener('click', function() {
+    document.getElementById('bgMusic').play();
+});
 
 // Floating hearts
 setInterval(() => {
@@ -116,6 +138,7 @@ setInterval(() => {
     document.body.appendChild(heart);
     setTimeout(() => { heart.remove(); }, 6000);
 }, 500);
+
 </script>
 
 </body>
