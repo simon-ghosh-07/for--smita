@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Smita ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container {
+    color: white;
+}
+
+h1 {
+    font-size: 3em;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 30px red; }
+}
+
+#message {
+    font-size: 1.5em;
+    margin-top: 20px;
+    min-height: 50px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: white;
+    color: #ff4e50;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4e50;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    color: rgba(255,255,255,0.7);
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); }
+    to { transform: translateY(-10vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Debosmita ❤️</h1>
+    <div id="message"></div>
+    <button onclick="surprise()">Click if you smile 😄</button>
+</div>
+
+<script>
+// Typing Effect
+const text = "Smita, you make my world brighter every single day. 💕";
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("message").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+    }
+}
+typeWriter();
+
+// Surprise
+function surprise() {
+    alert("If you’re smiling right now... mission successful 😌❤️");
+}
+
+// Create Floating Hearts
+setInterval(() => {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 500);
+</script>
+
+</body>
+</html>
